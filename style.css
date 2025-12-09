@@ -111,7 +111,7 @@ nav .container {
     font-weight: 600;
 }
 
-/* SECTIONS */
+/* SECTIONS (Style générique) */
 .section {
     width: 85%;
     margin: 150px auto;
@@ -136,6 +136,17 @@ nav .container {
 .section-title-large .line {
     display: block;
 }
+
+/* NOUVEAU STYLE PROFIL */
+.profil-content {
+    max-width: 850px; /* Légèrement plus large pour la lisibilité */
+    margin-left: auto; /* Centre le bloc de texte par rapport à la grille de la section */
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
 
 /* CV GRID */
 .cv-grid {
@@ -234,4 +245,62 @@ footer {
     padding: 70px 0;
     text-align: center;
     opacity: 0.6;
+}
+
+/* CERTIFICATIONS */
+.certifications-grid {
+    display: grid;
+    /* Utilise la même mise en page que les compétences pour l'alignement */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+.certification-card {
+    background: #141414;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.certification-card h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.certification-card p {
+    opacity: 0.7;
+    flex-grow: 1; /* Permet à la description de prendre de la place */
+}
+
+.cert-icon {
+    font-size: 30px;
+}
+
+.cert-link {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.cert-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.cert-link a:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
