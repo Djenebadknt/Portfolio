@@ -304,3 +304,32 @@ footer {
     opacity: 1;
     text-decoration: underline;
 }
+
+/* --- Style individuel Rituel --- */
+.rituel-item {
+    flex-basis: 45%;
+    min-width: 300px;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    color: inherit;
+    /* FIX: Assure que le texte du h3/p reste sous l'image */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centre le contenu verticalement (titres/texte) */
+    text-align: center; /* Centre le texte */
+    
+    /* MODIFICATION 1 : AJOUT DE LA TRANSITION POUR LE ZOOM */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+.rituel-item:hover {
+    /* MODIFICATION 2 : LE NOUVEL EFFET DE SURVOL */
+    transform: scale(1.05); /* Zoom de 5% */
+    z-index: 10; /* Assure que la carte zoomée passe au-dessus de l'autre */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour l'effet de profondeur */
+}
+
+/* Quand on survole le bloc, le titre devient jaune (ce bloc existait déjà, il ne faut pas le supprimer) */
+.rituel-item:hover h3 {
+    color: var(--color-accent);
+}
