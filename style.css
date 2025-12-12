@@ -210,6 +210,15 @@ nav .container {
     padding: 35px;
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.1);
+    /* Ajout de la transition pour la fluidité du zoom et de l'ombre */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+/* NOUVEAU : EFFET DE ZOOM AU SURVOL */
+.service-card:hover {
+    transform: scale(1.05); /* Agrandit la carte de 5% */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.15); /* Ajoute une ombre pour la faire ressortir */
+    z-index: 10; /* Assure que la carte zoomée passe au-dessus des autres */
 }
 
 .service-icon {
@@ -303,33 +312,4 @@ footer {
 .cert-link a:hover {
     opacity: 1;
     text-decoration: underline;
-}
-
-/* --- Style individuel Rituel --- */
-.rituel-item {
-    flex-basis: 45%;
-    min-width: 300px;
-    text-align: left;
-    cursor: pointer;
-    text-decoration: none; /* Enlève le soulignement du lien */
-    color: inherit;
-    /* FIX: Assure que le texte du h3/p reste sous l'image */
-    display: flex;
-    flex-direction: column; 
-    align-items: center; /* Centre le contenu verticalement (titres/texte) */
-    text-align: center; /* Centre le texte */
-    
-    /* MODIFICATION 1 : AJOUT DE LA TRANSITION POUR LE ZOOM */
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-}
-.rituel-item:hover {
-    /* MODIFICATION 2 : LE NOUVEL EFFET DE SURVOL */
-    transform: scale(1.05); /* Zoom de 5% */
-    z-index: 10; /* Assure que la carte zoomée passe au-dessus de l'autre */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour l'effet de profondeur */
-}
-
-/* Quand on survole le bloc, le titre devient jaune (ce bloc existait déjà, il ne faut pas le supprimer) */
-.rituel-item:hover h3 {
-    color: var(--color-accent);
 }
