@@ -139,8 +139,8 @@ nav .container {
 
 /* NOUVEAU STYLE PROFIL */
 .profil-content {
-    max-width: 850px; /* Légèrement plus large pour la lisibilité */
-    margin-left: auto; /* Centre le bloc de texte par rapport à la grille de la section */
+    max-width: 850px; 
+    margin-left: auto; 
     margin-right: auto;
     font-size: 18px;
     line-height: 1.7;
@@ -214,7 +214,7 @@ nav .container {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
-/* NOUVEAU : EFFET DE ZOOM AU SURVOL */
+/* NOUVEAU : EFFET DE ZOOM/HOVER SUR LES CARTES DE COMPÉTENCES */
 .service-card:hover {
     transform: scale(1.05); /* Agrandit la carte de 5% */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.15); /* Ajoute une ombre pour la faire ressortir */
@@ -242,6 +242,15 @@ nav .container {
     background: #141414;
     padding: 35px;
     border-radius: 12px;
+    /* AJOUT : Transition pour le zoom */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* NOUVEAU : EFFET DE ZOOM/HOVER SUR LES CARTES DE PROJETS */
+.project-card:hover {
+    transform: scale(1.05); /* Agrandit la carte de 5% */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.15); /* Ajoute une ombre pour la faire ressortir */
+    z-index: 10;
 }
 
 .project-image {
@@ -254,7 +263,8 @@ footer {
     padding: 70px 0;
     text-align: center;
     opacity: 0.6;
-}
+} /* <-- ACCCOLADE MANQUANTE CORRIGÉE ICI */
+
 
 /* CERTIFICATIONS */
 .certifications-grid {
@@ -272,12 +282,16 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: 0.3s;
+    /* AJOUT : Transition pour le zoom */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* NOUVEAU : EFFET DE ZOOM/HOVER SUR LES CARTES DE CERTIFICATIONS */
 .certification-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.15);
     border-color: rgba(255,255,255,0.3);
+    z-index: 10;
 }
 
 .certification-card h3 {
@@ -287,7 +301,7 @@ footer {
 
 .certification-card p {
     opacity: 0.7;
-    flex-grow: 1; /* Permet à la description de prendre de la place */
+    flex-grow: 1; 
 }
 
 .cert-icon {
